@@ -1,5 +1,5 @@
 ./*/lambda.zip
-./*/target
+./*/target/
 
 # Logs
 logs
