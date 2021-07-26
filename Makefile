@@ -18,4 +18,8 @@ build-data-req:
 	zip lambda.zip bootstrap && \
 	rm bootstrap
 
-deploy-data-req:
+deploy-data-req: build-data-req
+	aws lambda update-function-code --function-name data_request \
+	--zip-file fileb://./data_request/lambda.zip \
+	--publish && \
+	rm ./data_request/lambda.zip
